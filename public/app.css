@@ -12,3 +12,7 @@ img {
 .my-navbar {
 	background-color: #e3f2fd;
 }
+
+#create-button {
+	width: 100%;
+}

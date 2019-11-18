@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+    <form method="post" action="/student/<%= @student.nil? ? -1 : @student.student_id%>">
+      <input type="hidden" name="_method" value=<%= @student.nil? ? "post" : "put" %>>
+      <div class="form-group">
+        <label for="first_name">First Name:</label>
+        <input type="text" class="form-control" name="first_name" value=<%= @student.nil? ? '' : @student.first_name %>>
+      </div>
+      <div class="form-group">
+        <label for="last_name">Last Name:</label>
+        <input type="text" class="form-control" name="last_name" value=<%= @student.nil? ? '' : @student.last_name %>>
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <input type="text" class="form-control" name="address" value=<%= @student.nil? ? '' : @student.address %>>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" name="email" value=<%= @student.nil? ? '' : @student.email %>>
+      </div>
+      <div class="form-group">
+        <label for="birthday">Birthday:</label>
+        <input type="date" class="form-control" name="birthday" value=<%= @student.nil? ? '' : @student.birthday %>>
+      </div>
+      <div class="form-group">
+        <label for="student_class">Class:</label>
+        <input type="number" class="form-control" name="student_class" value=<%= @student.nil? ? '' : @student.student_class %>>
+      </div>
+      <div class="form-group form-check">
+        <label class="form-check-label">
+          <input class="form-check-input" name="is_graduated" type="checkbox" <%= (@student.nil? || !@student.is_graduated) ? '' : 'checked' %>> Is Graduated
+        </label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <a class="btn btn-secondary" href=<%= @student.nil? ? '/students' : '/student/' + @student.student_id.to_s %>>
+        Cancel
+      </a>
+    </form>
+  </div>
+</div>

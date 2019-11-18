@@ -13,6 +13,8 @@ class Student
 	property :is_graduated, Boolean
 end
 
+DataMapper.finalize
+
 class InvalidStudentException < StandardError
 end
 
@@ -31,6 +33,7 @@ def create_student(params)
 		student_class: params[:student_class],
 		is_graduated: false,
 	)
+	return student
 end
 
 def validate_create_student_param(params, attribute_name)
@@ -48,3 +51,18 @@ def get_student_details(student_id)
 	student = Student.get(student_id)
 	return student
 end 
+
+def update_student(params)
+	student = get_student_details(params[:student_id])
+	print params
+	student.update(
+		first_name: params[:first_name],
+		last_name: params[:last_name],
+		address: params[:address],
+		email: params[:email],
+		birthday: params[:birthday],
+		student_class: params[:student_class],
+		is_graduated: params[:is_graduate].eql?("on"),
+	)
+	return student
+end

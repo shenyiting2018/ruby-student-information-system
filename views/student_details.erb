@@ -1,22 +1,28 @@
-<div class="container">
-		<div class="row">
-			<div class="col-md-4 offset-md-4 text-center">
-				<h1><%= @student.first_name + " " + @student.last_name %></h1>
-			</div>
+	<div class="row">
+		<div class="col-md-4 offset-md-4 text-center">
+			<h1><%= @student.first_name + " " + @student.last_name %></h1>
 		</div>
-
-		<div class="row">
-			<div class="col-md-4 offset-md-4">
-				<ul class="list-group list-group-flush">
-					<li class="list-group-item">First Name: <%= @student.first_name %></li>
-					<li class="list-group-item">Last Name: <%= @student.last_name %></li>
-					<li class="list-group-item">Address: <%= @student.address %></li>
-					<li class="list-group-item">Email: <%= @student.email %></li>
-					<li class="list-group-item">Birthday: <%= @student.birthday %></li>
-					<li class="list-group-item">Class: <%= @student.student_class %></li>
-					<li class="list-group-item">is Graduated: <%= @student.is_graduated? %></li>
-					<li class="list-group-item"><a class="btn btn-dark" href="/student/<%= @student.student_id %>">Edit</a></li>
-				</ul>
-			</div>
 	</div>
+
+	<div class="row">
+		<div class="col-md-4 offset-md-4">
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">First Name: <%= @student.first_name %></li>
+				<li class="list-group-item">Last Name: <%= @student.last_name %></li>
+				<li class="list-group-item">Address: <%= @student.address %></li>
+				<li class="list-group-item">Email: <%= @student.email %></li>
+				<li class="list-group-item">Birthday: <%= @student.birthday %></li>
+				<li class="list-group-item">Class: <%= @student.student_class %></li>
+				<li class="list-group-item">is Graduated: <%= @student.is_graduated? %></li>
+				<li class="list-group-item">
+					<a class="btn btn-dark" href="/student/<%= @student.student_id %>/edit">Edit</a>
+					<a class="btn btn-secondary" onclick="window.history.back()">Back</a>
+				</li>
+				<li class="list-group-item">
+				  <form method="post" action="/student/<%=  @student.student_id %>">
+      		<input type="hidden" name="_method" value="delete">
+  		    <button type="submit" class="btn btn-danger">Delete</button>
+				</li>
+			</ul>
+		</div>
 </div>
