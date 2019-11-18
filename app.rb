@@ -1,5 +1,17 @@
+# third-party dependency
 require 'sinatra'
 require 'sinatra/reloader'
+require 'dm-core'
+require 'dm-migrations'
+# files in project
+require './controllers/students_controller'
+require './models/student'
+
+# TODO development vs production
+DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/dbs/student.db")
+
+Student.auto_migrate!
+
 
 get('/') do
 	@title = "home page"
