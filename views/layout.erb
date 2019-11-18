@@ -1,32 +1,34 @@
 <html>
 	<head>
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-		<link href="style.css" rel="stylesheet" type="text/css">
+	  <link rel="stylesheet" href="/vendors/css/bootstrap.css">
+		<link href="app.css" rel="stylesheet" type="text/css">
 		<title><%= @title || "Student Information System" %></title>
 	</head>
-	<body class="container">
-		<div class="row">
-			<div class="col-md-7">
-				<img src="/images/theme.jpeg" alt="404 Not Found">
+	<body>
+		<div id="entire-page" class="container">
+			<div class="row">
+				<div class="col-md-7">
+					<img src="/images/theme.jpeg" alt="404 Not Found">
+				</div>
+				<div class="col-md-5">
+					<h1 id="subject">Student Information System</h1>
+				</div>
 			</div>
-			<div class="col-md-5">
-				<h1 id="subject">Student Information System</h1>
-			</div>
+			<nav class="navbar navbar-expand-sm navbar-dark bg-dark my-navbar">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link" href="/">Home</a> </li>
+					<li class="nav-item"><a class="nav-link" href="/about">About</a> </li>
+					<li class="nav-item"><a class="nav-link" href="/contact">Contact</a> </li>
+					<li class="nav-item"><a class="nav-link" href="/students">Students</a> </li>
+					<li class="nav-item"><a class="nav-link" href="/comment">Comment</a> </li>
+					<li class="nav-item"><a class="nav-link" href="/video">Video</a> </li>
+					<li class="nav-item"><a class="nav-link" href="/login">Login</a> </li>
+				</ul>
+			</nav>
+			<%= yield %>
 		</div>
-		<nav class="navbar navbar-expand-sm navbar-dark bg-dark my-navbar">
-		<ul class="navbar-nav">
-			<li class="nav-item"><a class="nav-link" href="/">Home</a> </li>
-			<li class="nav-item"><a class="nav-link" href="/about">About</a> </li>
-			<li class="nav-item"><a class="nav-link" href="/contact">Contact</a> </li>
-			<li class="nav-item"><a class="nav-link" href="/students">Students</a> </li>
-			<li class="nav-item"><a class="nav-link" href="/comment">Comment</a> </li>
-			<li class="nav-item"><a class="nav-link" href="/video">Video</a> </li>
-			<li class="nav-item"><a class="nav-link" href="/login">Login</a> </li>
-		</ul>
-	</nav>
-		<%= yield %>
 	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="/vendors/js/bootstrap.min.js"></script>
 </html>

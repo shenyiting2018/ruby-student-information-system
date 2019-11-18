@@ -4,13 +4,13 @@ require 'sinatra/reloader'
 require 'dm-core'
 require 'dm-migrations'
 # files in project
-require './controllers/students_controller'
 require './models/student'
+require './controllers/student_controller'
 
 # TODO development vs production
 DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/dbs/student.db")
 
-Student.auto_migrate!
+Student.auto_migrate! unless DataMapper.repository(:default).adapter.storage_exists?('students')
 
 
 get('/') do
