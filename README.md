@@ -13,9 +13,9 @@
 
 # RESTful API
 *students*
-GET: /students   - List all students
-POST: /student   - Create a new student
-GET: /student/<id>    - Get the student detail
-PUT: /student   - Edit student 
-DELETE: /student/<id>   - Delete student 
+- GET: /students   - List all students
+- POST: /student   - Create a new student
+- GET: /student/<id>    - Get the student detail
+- PUT: /student   - Edit student 
+- DELETE: /student/<id>   - Delete student 
 
