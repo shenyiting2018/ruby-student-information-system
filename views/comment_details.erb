@@ -1,0 +1,11 @@
+<div class="row">
+	<div class="col-md-8 offset-md-2">
+		<div class="text-center">
+			<h1><%= @comment.name %></h1>
+			<h5>Published at: <%= @comment.created_at %></h5>
+		</div>
+		<p><%= @comment.content %></p>
+		<a class="btn btn-secondary text-center" href="/comments">Back</a>
+	</div>
+</div>	
+

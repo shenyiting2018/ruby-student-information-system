@@ -1,18 +1,5 @@
 require_relative('../models/student')
 
-# Create a new student
-post('/student') do 
-	params = {
-		:first_name=>"Lulu",
-		:last_name=>"Liu",
-		:address=>"Mars",
-		:email=>"miaomiao@gmail.com",
-		:birthday=>Date.new(2015),
-		:student_class=>1
-	}
-
-	student = create_student(params)
-end
 
 # Update API
 put('/student/:student_id') do
@@ -28,7 +15,7 @@ delete('/student/:student_id') do
 end
 
 #Create API
-post('/student/-1') do
+post('/student') do
 	@student = create_student(params)
 	erb(:student_details)
 end
