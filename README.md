@@ -1,6 +1,7 @@
 Ruby-based Student Information Manager
 ================================
 This is a ruby-based student information manager for COEN-278 (Advanced Web Programming) at Santa Clara University.
+![](https://raw.githubusercontent.com/shenyiting2018/ruby-student-information-system/master/about-demo.png)
 
 Author
 ========
@@ -21,6 +22,7 @@ Features
 * Viewing student details
 ![](https://raw.githubusercontent.com/shenyiting2018/ruby-student-information-system/master/student-details-demo.png)
 * Creating/Editing student information
+![](https://raw.githubusercontent.com/shenyiting2018/ruby-student-information-system/master/student-edit-demo.png)
 * Adding new comment
 * Viewing comments by time order descending
 
