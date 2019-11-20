@@ -10,12 +10,16 @@ Website
 ========
 * [https://yiting-student-manager.herokuapp.com/](https://yiting-student-manager.herokuapp.com/)
 * To login: demo/demo
+
 Features
 =======
 
 * Login/Logout
+
 * Viewing student list (with raw data)
+![](https://raw.githubusercontent.com/shenyiting2018/ruby-student-information-system/master/students-demo.png)
 * Viewing student details
+![](https://raw.githubusercontent.com/shenyiting2018/ruby-student-information-system/master/student-details-demo.png)
 * Creating/Editing student information
 * Adding new comment
 * Viewing comments by time order descending
