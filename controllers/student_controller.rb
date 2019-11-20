@@ -34,8 +34,12 @@ end
 
 # Get the edit form page
 get('/student/:student_id/edit') do 
-	@student = get_student_details(params[:student_id])
-	erb(:student_edit_form)
+	if !session[:authorized]
+		redirect to "/login"
+	else
+		@student = get_student_details(params[:student_id])
+		erb(:student_edit_form)
+	end
 end
 
 # List all students

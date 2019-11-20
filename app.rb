@@ -60,7 +60,7 @@ end
 post('/login') do
 	@login_failed = true
 	if settings.username.eql?(params[:username]) && settings.password.eql?(params[:password])
-		session[:authorized] = "true"
+		session[:authorized] = true
 		@login_faild = false
 		redirect to "/"
 	else
@@ -69,6 +69,7 @@ post('/login') do
 end
 
 get('/logout') do
+	session[:authorized] = false
 	redirect to "/"
 end
 

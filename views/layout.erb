@@ -23,7 +23,8 @@
 					<li class="nav-item"><a class="nav-link" href="/students">Students</a> </li>
 					<li class="nav-item"><a class="nav-link" href="/comments">Comments</a> </li>
 					<li class="nav-item"><a class="nav-link" href="/video">Video</a> </li>
-					<li class="nav-item"><a class="nav-link" href="/login"><%= session[:authorized] ? "Logout" : "Login" %></a> </li>
+					<li class="nav-item"><a class="nav-link" 
+						href=<%= session[:authorized] == true ? "/logout" : "/login" %>><%= session[:authorized] == true ? "Logout" : "Login" %></a> </li>
 				</ul>
 			</nav>
 

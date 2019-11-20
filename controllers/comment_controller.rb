@@ -31,7 +31,11 @@ end
 
 # Get create new comment page
 get('/comment') do
-	erb(:comment_new)
+	if !session[:authorized]
+		redirect to "/login"
+	else
+		erb(:comment_new)
+	end
 end
 
 
