@@ -8,8 +8,8 @@ Author
 
 Website
 ========
-[https://yiting-student-manager.herokuapp.com/](https://yiting-student-manager.herokuapp.com/)
-
+* [https://yiting-student-manager.herokuapp.com/](https://yiting-student-manager.herokuapp.com/)
+* To login: demo/demo
 Features
 =======
 
@@ -31,7 +31,9 @@ Techs applied in this project
 * Gem
 * ERB
 * REST API Design
-
+* Bootstrap
+* HTML
+* CSS
 
 
 License
