@@ -3,8 +3,6 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'dm-core'
 require 'dm-migrations'
-require 'dm-timestamps'
-# files in project
 require './models/student'
 require './controllers/student_controller'
 require './models/comment'
@@ -17,8 +15,10 @@ configure :development do
 end
 
 configure :production do
-	DataMapper.setup(:default, 
-		ENV['DATAVASE_URL'])
+	DataMapper.setup(
+    :default, 
+		ENV['DATABASE_URL']
+  )
 end
 
 Student.auto_migrate! unless DataMapper.repository(:default).adapter.storage_exists?('students')
