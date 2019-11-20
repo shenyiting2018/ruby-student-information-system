@@ -5,6 +5,7 @@ This is a ruby-based student information manager for COEN-278 (Advanced Web Prog
 Author
 ========
 [Yiting Shen](https://www.linkedin.com/in/shenyiting/) 
+
 Website
 ========
 [https://yiting-student-manager.herokuapp.com/](https://yiting-student-manager.herokuapp.com/)
