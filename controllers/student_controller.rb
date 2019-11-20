@@ -3,21 +3,33 @@ require_relative('../models/student')
 
 # Update API
 put('/student/:student_id') do
-	@student = update_student(params)
-	erb(:student_details)
+	if !session[:authorized]
+		redirect to "/login"
+	else
+		@student = update_student(params)
+		erb(:student_details)
+	end
 end
 
 # Delete API
 delete('/student/:student_id') do
-	@student = get_student_details(params[:student_id])
-	@student.destroy
-	erb(:student_delete)
+	if !session[:authorized]
+		redirect to "/login"
+	else
+		@student = get_student_details(params[:student_id])
+		@student.destroy
+		erb(:student_delete)
+	end
 end
 
 #Create API
 post('/student') do
-	@student = create_student(params)
-	erb(:student_details)
+	if !session[:authorized]
+		redirect to "/login"
+	else
+		@student = create_student(params)
+		erb(:student_details)
+	end
 end
 
 # Get the edit form page

@@ -2,9 +2,12 @@ require_relative('../models/comment')
 
 # Create new comment
 post('/comment') do
-	@comment = create_comment(params)
-	
-	redirect to "/comments"
+	if !session[:authorized]
+		redirect to "/login"
+	else
+		@comment = create_comment(params)
+		redirect to "/comments"
+	end
 end
 
 # List all comments

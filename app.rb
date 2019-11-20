@@ -1,6 +1,6 @@
 # third-party dependency
 require 'sinatra'
-require 'sinatra/reloader'
+require 'sinatra/reloader' if development?
 require 'dm-core'
 require 'dm-migrations'
 require 'dm-timestamps'
@@ -24,7 +24,14 @@ end
 Student.auto_migrate! unless DataMapper.repository(:default).adapter.storage_exists?('students')
 Comment.auto_migrate! unless DataMapper.repository(:default).adapter.storage_exists?('comments')
 
+# Session management
+configure do
+	enable :sessions
+	set :username, "demo"
+	set :password, "demo"
+end
 
+#---- Common Endpoints
 get('/') do
 	@title = "home page"
 	erb :home
@@ -41,8 +48,28 @@ get('/contact') do
 end
 
 get('/video') do
-	@title = "Video"
+	@title = "video"
 	erb :video
+end
+
+get('/login') do
+	@title = "login"
+	erb :login
+end
+
+post('/login') do
+	@login_failed = true
+	if settings.username.eql?(params[:username]) && settings.password.eql?(params[:password])
+		session[:authorized] = "true"
+		@login_faild = false
+		redirect to "/"
+	else
+		erb :login
+	end
+end
+
+get('/logout') do
+	redirect to "/"
 end
 
 not_found do

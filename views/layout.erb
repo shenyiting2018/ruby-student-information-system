@@ -2,6 +2,7 @@
 	<head>
 	  <link rel="stylesheet" href="/vendors/css/bootstrap.css">
 		<link href="app.css" rel="stylesheet" type="text/css">
+		<link rel="icon" href="/images/title-icon.svg" type="image/x-icon">
 		<title><%= @title || "Student Information System" %></title>
 	</head>
 	<body>
@@ -22,7 +23,7 @@
 					<li class="nav-item"><a class="nav-link" href="/students">Students</a> </li>
 					<li class="nav-item"><a class="nav-link" href="/comments">Comments</a> </li>
 					<li class="nav-item"><a class="nav-link" href="/video">Video</a> </li>
-					<li class="nav-item"><a class="nav-link" href="/login">Login</a> </li>
+					<li class="nav-item"><a class="nav-link" href="/login"><%= session[:authorized] ? "Logout" : "Login" %></a> </li>
 				</ul>
 			</nav>
 
