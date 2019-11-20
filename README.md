@@ -1,5 +1,9 @@
-# ruby-student-information-system
+ruby-student-information-system
+================================
+Author: [Yiting Shen](https://www.linkedin.com/in/shenyiting/) 
 
+
+This is a ruby-based student information system 
 
 
 # Table Design
