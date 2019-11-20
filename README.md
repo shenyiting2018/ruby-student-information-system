@@ -1,10 +1,13 @@
-ruby-student-information-system
+Ruby-based Student Information Manager
 ================================
-Author: [Yiting Shen](https://www.linkedin.com/in/shenyiting/) 
-Website: [https://yiting-student-manager.herokuapp.com/](https://yiting-student-manager.herokuapp.com/)
-Hosted on: Heroku
-
 This is a ruby-based student information manager for COEN-278 (Advanced Web Programming) at Santa Clara University.
+
+Author
+========
+[Yiting Shen](https://www.linkedin.com/in/shenyiting/) 
+Website
+========
+[https://yiting-student-manager.herokuapp.com/](https://yiting-student-manager.herokuapp.com/)
 
 Features
 =======
