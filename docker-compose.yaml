@@ -1,0 +1,16 @@
+version: "3"
+services:
+  sinatra:
+    build: ./
+    image: sinatra
+    container_name: student-manager
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/pwd       # mount pwd
+    working_dir: /pwd
+    # command: sleep 5d
+    stdin_open: true
+    tty: true
+    command: ./app.rb -o 0.0.0.0 -p 80

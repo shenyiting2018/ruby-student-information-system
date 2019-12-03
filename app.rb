@@ -1,3 +1,4 @@
+#! /usr/bin/ruby
 # third-party dependency
 require 'sinatra'
 require 'sinatra/reloader' if development?
